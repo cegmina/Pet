@@ -2,22 +2,34 @@
 node_modules/
 *.lock
 bun.lock
+package-lock.json
 
 # Build outputs
 .expo/
 web-build/
+dist/
+build/
 
-# Environment files
+# Environment files - keep example file, ignore actual credentials
 .env
 .env.local
 .env.production
+.env.*.local
 
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
 
 # OS files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 
 # Logs
@@ -26,44 +38,17 @@ yarn-debug.log*
 yarn-error.log*
 bun-debug.log*
 bun-error.log*
+lerna-debug.log*
 
 # Cache directories
 .cache/
+.eslintcache
 
-# Keep dist for static hosting
-# dist/ - comentado para que se incluya en Git
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+# Testing
+coverage/
+.nyc_output/
 
-# dependencies
-node_modules/
-
-# Expo
-.expo/
-dist/
-web-build/
-expo-env.d.ts
-
-# Native
+# Native builds
 ios/
 android/
 *.orig.*
@@ -72,22 +57,23 @@ android/
 *.p12
 *.key
 *.mobileprovision
+*.cer
+*.pem
+
+# Expo prebuild
+.expo-prebuild/
 
 # Metro
 .metro-health-check*
 
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
-
-# macOS
-.DS_Store
-*.pem
-
-# local env files
-.env*.local
-
-# typescript
+# TypeScript
 *.tsbuildinfo
+
+# Vercel
 .vercel
+.vercel/
+
+# Misc
+*.patch
+~/.env.production
+
